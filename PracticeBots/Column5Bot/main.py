@@ -9,10 +9,7 @@ import typing
 # game_state: dict of 1 = my moves, -1 = opponent moves, 0 = empty
 def move(game_state: typing.Dict) -> int:
 
-    # TODO: Implement move logic here
-    next_move = 3
-
-
+    next_move = 4
     
     print(f"MOVE: {next_move}")
     return {"move": next_move}
