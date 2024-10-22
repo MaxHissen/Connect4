@@ -9,7 +9,10 @@ import typing
 # game_state: dict of 1 = my moves, -1 = opponent moves, 0 = empty
 def move(game_state: typing.Dict) -> int:
 
-    next_move = 4
+    # TODO: Implement move logic here
+    next_move = 3
+
+
     
     print(f"MOVE: {next_move}")
     return {"move": next_move}
@@ -21,8 +24,8 @@ def info() -> typing.Dict:
     return {
         "apiversion": "1",
         "author": "Snoblaxx",  # TODO: Your Connect4 AI Username
-        "name": "Column5Bot",
-        "info": "This bot really likes the number 5"
+        "name": "Column4Bot",
+        "info": "This bot really likes the number 4"
     }
 
 
