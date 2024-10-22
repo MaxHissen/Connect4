@@ -21,8 +21,8 @@ def info() -> typing.Dict:
     return {
         "apiversion": "1",
         "author": "Snoblaxx",  # TODO: Your Connect4 AI Username
-        "name": "Column4Bot",
-        "info": "This bot really likes the number 4"
+        "name": "Column5Bot",
+        "info": "This bot really likes the number 5"
     }
 
 
