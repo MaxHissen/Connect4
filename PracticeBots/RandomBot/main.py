@@ -2,9 +2,8 @@ import random
 import typing
 
 def move(game_state: typing.Dict) -> int:
-    next_move = 4
+    next_move = random.randint(0,6)
 
-    print(f"MOVE: {next_move}")
     return {"move": next_move}
     
 
@@ -13,8 +12,8 @@ def info() -> typing.Dict:
     return {
         "apiversion": "1",
         "author": "Snoblaxx",
-        "name": "Column5Bot",
-        "info": "This bot really likes the number 5"
+        "name": "RandomBot",
+        "info": "This bot is blind. Makes random moves"
     }
 
 
