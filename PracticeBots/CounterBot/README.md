@@ -1,1 +1,1 @@
-https://connect4-ydyh.onrender.com
+https://connect4-2.onrender.com/
