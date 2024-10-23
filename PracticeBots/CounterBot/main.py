@@ -2,9 +2,13 @@ import random
 import typing
 
 def move(game_state: typing.Dict) -> int:
-    next_move = 4
+    amount = 0
+    for key in game_state:
+        if game_state[key] == 1:
+            amount += 1
 
-    print(f"MOVE: {next_move}")
+    next_move = amount%7
+
     return {"move": next_move}
     
 
