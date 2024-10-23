@@ -17,8 +17,8 @@ def info() -> typing.Dict:
     return {
         "apiversion": "1",
         "author": "Snoblaxx",
-        "name": "Column5Bot",
-        "info": "This bot really likes the number 5"
+        "name": "CounterBot",
+        "info": "This bot increases its column by 1 every move"
     }
 
 
