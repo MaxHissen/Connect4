@@ -50,7 +50,11 @@ class Connect4:
         return
 
     def __repr__(self):
-        string = "To move: Player " + str(self.to_move) + "\n"
+        string = ""
+        if self.game_over:
+            string += "Game Over. Winner: Player " + str(self.winner) + "\n"
+        else:
+            string += "To move: Player " + str(self.turn) + "\n"
         for y in range(self.game_constants["HEIGHT"]):
             for x in range(self.game_constants["WIDTH"]):
                 value = self.board[(x,self.game_constants["HEIGHT"] - y - 1)]
