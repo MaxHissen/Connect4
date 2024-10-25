@@ -1,5 +1,4 @@
-import requests
-import typing
+import random
 
 GAME_CONSTANTS = {
     "EMPTY" : 0, #actual value put on board for empty tiles
@@ -47,12 +46,21 @@ class Connect4:
 
         #player 1 moves first
         self.turn = 1
-        return
+        
+        
+        #add random pieces to the board to induce randomness in AIs
+        #like forcing chess AIs to play random openings
+        for i in range(2):
+            self.insert(random.randint(0,6), GAME_CONSTANTS["P1"])
+            self.insert(random.randint(0,6), GAME_CONSTANTS["P2"])
 
     def __repr__(self):
         string = ""
         if self.game_over:
-            string += "Game Over. Winner: Player " + str(self.winner) + "\n"
+            if str(self.winner) == 0:
+                string += "Game Over. Draw" + "\n"
+            else:
+                string += "Game Over. Winner: Player " + str(self.winner) + "\n"
         else:
             string += "To move: Player " + str(self.turn) + "\n"
         for y in range(self.game_constants["HEIGHT"]):
@@ -160,20 +168,4 @@ class Connect4:
                     self.game_over = True
                     self.winner = 2
                     return
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
