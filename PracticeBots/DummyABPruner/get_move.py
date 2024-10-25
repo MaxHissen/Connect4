@@ -1,5 +1,6 @@
 import sys
 import math
+import random
 
 class Position:
   def __init__(self, board):
@@ -227,42 +228,41 @@ class Position:
   #TODO
   #returns the evaluation of a non-terminal position
   def static_evaluation(self):
-    return 1
+    return 0
     
 def get_move(board):
   initial_position = Position(board)
 
-  depth_limit = 2
+  depth_limit = 6
   
   #iterate through all possible initial moves and get score of each
-  move_scores = [0]*7
+  move_scores = [-math.inf]*7
   for move in initial_position.get_moves():
     initial_position.make_move(move)
     #run minimax with alpha beta pruning on position after inital move
     move_scores[move] = alpha_beta(initial_position, depth_limit, -math.inf, math.inf)
     initial_position.unmake_move()
-
+    
   
   #find and return best move
   highest_score = max(move_scores)
-  for move in initial_position.get_moves():
-    if move_scores[move] == highest_score:
-      return move
+  max_indices = [index for index, score in enumerate(move_scores) if score == highest_score]
+  random_index = random.choice(max_indices)
   
   
-  return 3
+  return random_index
 
 def alpha_beta(cur_position, depth_limit, alpha, beta):
   # Base case
   if cur_position.is_terminal():
     return cur_position.terminal_evaluation()
 
-  if cur_position.search_depth > depth_limit:
+  if cur_position.search_depth >= depth_limit:
     return cur_position.static_evaluation()
 
   
   # Recursive case
-  if cur_position.turn == 1:
+  if cur_position.turn == 0:
     # Maximizing player
     best_score = -math.inf
     for move in cur_position.get_moves():
@@ -283,6 +283,6 @@ def alpha_beta(cur_position, depth_limit, alpha, beta):
       best_score = min(best_score, score)
       beta = min(beta, best_score)  # Update beta
       if alpha >= beta:  # Prune the remaining branches
-          break
+        break
 
   return best_score
