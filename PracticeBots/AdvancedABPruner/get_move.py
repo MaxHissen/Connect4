@@ -334,7 +334,7 @@ class Position:
 def get_move(board):
   initial_position = Position(board)
 
-  depth_limit = 8
+  depth_limit = 6
   
     
   
