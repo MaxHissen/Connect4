@@ -29,8 +29,8 @@ def info() -> typing.Dict:
     return {
         "apiversion": "1",
         "author": "Snoblaxx",  # TODO: Your Connect4 AI Username
-        "name": "AdvancedABPruner",
-        "info": "Uses heuristics to improve minimax"
+        "name": "DummyABPruner",
+        "info": "Uses heuristics to improve Alpha Beta search algorithm"
     }
 
 
