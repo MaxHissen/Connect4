@@ -30,7 +30,7 @@ def info() -> typing.Dict:
         "apiversion": "1",
         "author": "Snoblaxx",  # TODO: Your Connect4 AI Username
         "name": "AdvancedABPruner",
-        "info": "Example of a bot that uses minimax to find the best move, with no heuristics"
+        "info": "Uses heuristics to improve minimax"
     }
 
 
