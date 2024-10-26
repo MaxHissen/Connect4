@@ -10,15 +10,16 @@ PLAYER_DICT = {
     "Column5Bot" : "https://connect4-ydyh.onrender.com/",
     "RandomBot" : "https://connect4-1.onrender.com/",
     "CounterBot" : "https://connect4-2.onrender.com/",
-    "DummyABPruner" : "https://connect4-tbp7.onrender.com/"
+    "DummyABPruner" : "https://connect4-tbp7.onrender.com/",
+    "AdvancedABPruner" : "https://advancedabpruner.onrender.com/",
 }
 
 
 """
 TestGame to test your AI.
 """
-player_1 = "https://36bfd9f0-58b2-439d-9b8c-0d9542714e51-00-30ivmv1v0r0jy.kirk.replit.dev/" #X
-player_2 = "https://36bfd9f0-58b2-439d-9b8c-0d9542714e51-00-30ivmv1v0r0jy.kirk.replit.dev/" #Y
+player_1 = "https://connect4-tbp7.onrender.com/" #X
+player_2 = "https://connect4-tbp7.onrender.com/" #Y
 #TestGame(player_1, player_2, display=DISPLAY)
 
 
@@ -30,6 +31,7 @@ players.append(PLAYER_DICT["RandomBot"])
 players.append(PLAYER_DICT["Column5Bot"])
 players.append(PLAYER_DICT["CounterBot"])
 players.append(PLAYER_DICT["DummyABPruner"])
+players.append(PLAYER_DICT["AdvancedABPruner"])
 
 #Tournament settings
 wins = 4 #first to n wins advances
