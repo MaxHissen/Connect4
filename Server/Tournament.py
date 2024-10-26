@@ -163,8 +163,6 @@ class RoundRobin:
 
         #list of all games to play
         self.remaining_schedule = schedule
-        
-        print(self.remaining_schedule)
 
     #prints round robin standings
     def __repr__(self):
