@@ -1,20 +1,36 @@
 import random
 import typing
+import ast
 
+from get_move import get_move
+
+
+
+# move is called on every turn and returns your next move
+# Valid moves are from 0-6
+# returns what column to put move in
+# game_state: dict. 1 -> my moves, -1 -> opponent moves, 0 -> empty
 def move(game_state: typing.Dict) -> int:
-    next_move = 4
 
+    # TODO: Implement move logic here
+    board = [[0]*7 for i in range(6)]
+    for key in game_state:
+        x,y = ast.literal_eval(key)
+        board[int(y)][int(x)] = game_state[key]
+
+    next_move = get_move(board)
     print(f"MOVE: {next_move}")
     return {"move": next_move}
     
 
+# TIP: If you open your Connect4 AI URL in a browser you should see this data
 def info() -> typing.Dict:
     print("INFO")
     return {
         "apiversion": "1",
-        "author": "Snoblaxx",
-        "name": "Column5Bot",
-        "info": "This bot really likes the number 5"
+        "author": "Snoblaxx",  # TODO: Your Connect4 AI Username
+        "name": "AdvancedABPruner",
+        "info": "Example of a bot that uses minimax to find the best move, with no heuristics"
     }
 
 
